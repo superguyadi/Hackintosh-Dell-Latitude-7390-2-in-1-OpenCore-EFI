@@ -1,7 +1,7 @@
 # Hackintosh-Dell-Latitude-7390-2-in-1-OpenCore-EFI
 
 
-EFI for MacOS Big Sur 11.5.2, using OpenCore 0.7.2 (as of 28/08/2021). 
+EFI for MacOS Monterey 12.0.1, using OpenCore 0.7.5 (as of 5/12/2021). 
 
 
 ## What Works
@@ -27,10 +27,29 @@ EFI for MacOS Big Sur 11.5.2, using OpenCore 0.7.2 (as of 28/08/2021).
 
 - Sound doesn't work after the hackintosh has woken up from sleep. I'm not sure why this is, it might be the thunderbolt kexts and SSDTs causing all manner of issues. If someone figures this out, please say!
 
-- Brightness keys (currently mapped to Function + S, Function + B) are not mapped to the arrow keys.
+- Brightness keys (currently mapped to Function + S, Function + B) are ALSO mapped to the arrow keys.
 
 - iServices - follow Dortania's OpenCore guide to sort this out.
 
 ## Future Development
 
 As this originally started as a personal side project during my Christmas break, I failed to properly document the sources for each kext, driver etc. and the reason wht they were necessary. At some point in the future, I will start from scratch and work out the reason for each additional file and change to OpenCore. Hopefully, this will fix the sleep issues that are the main issue at the moment.
+
+## SSDT Explanation
+
+Most of the uncommon ACPI/SSDT files have been sourced from: https://github.com/daliansky/OC-little
+Some of the cosmetic/dummy Apple-specific hardware is emulated by using the following SSDTS. I do not understand their added benefits, but just err on the safe side. Your system may work fine even without them but I haven't tested.
+DMAC
+MEM2
+IMEI
+PMCR
+
+SSDTs for Thunderbolt/sleep:
+Z390-TB3HP
+DTPG
+
+Some dell specific SSDTs:
+PTSWAK
+LIDpatch
+OCWork-dell
+FnInsert_BTNV-dell
