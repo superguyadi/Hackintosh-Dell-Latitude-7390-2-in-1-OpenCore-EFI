@@ -1,7 +1,7 @@
 # Hackintosh-Dell-Latitude-7390-2-in-1-OpenCore-EFI
 
 
-EFI for MacOS Monterey 12.0.1, using OpenCore 0.7.5 (as of 5/12/2021). 
+EFI for MacOS Monterey 12.0.1, using OpenCore 0.7.6 (as of 7/12/2021). 
 
 
 ## What Works
